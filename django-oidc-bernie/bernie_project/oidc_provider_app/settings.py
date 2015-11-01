@@ -28,7 +28,6 @@ INSTALLED_APPS = (
     
     'allauth',
     'allauth.account',
-    'allauth.account.auth_backends',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.dropbox',
     'allauth.socialaccount.providers.facebook',
@@ -57,12 +56,35 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+# If you are running Django 1.8+, specify the context processors
+# as follows:
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages'
+            ],
+        },
+    },
+]
+
 AUTHENTICATION_BACKENDS = (
-    "allauth.account.auth_backends.AuthenticationBackend",
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
 )
 
 
 ROOT_URLCONF = 'oidc_provider_app.urls'
+
 
 WSGI_APPLICATION = 'oidc_provider_app.wsgi.application'
 
@@ -105,3 +127,5 @@ LOGIN_REDIRECT_URL = '/'
 
 SITE_URL = 'http://localhost:8000'
 OIDC_RSA_KEY_FOLDER = BASE_DIR
+
+SOCIALACCOUNT_ENABLED = 'allauth.socialaccount' in INSTALLED_APPS

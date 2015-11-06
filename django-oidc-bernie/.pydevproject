@@ -2,7 +2,7 @@
 <?eclipse-pydev version="1.0"?><pydev_project>
 <pydev_variables_property name="org.python.pydev.PROJECT_VARIABLE_SUBSTITUTION">
 <key>DJANGO_MANAGE_LOCATION</key>
-<value>manage.py</value>
+<value>bernie_project/manage.py</value>
 <key>DJANGO_SETTINGS_MODULE</key>
 <value>oidc_provider_app.settings</value>
 </pydev_variables_property>
@@ -11,5 +11,5 @@
 <path>/${PROJECT_DIR_NAME}/bernie_project</path>
 </pydev_pathproperty>
 <pydev_property name="org.python.pydev.PYTHON_PROJECT_VERSION">python 2.7</pydev_property>
-<pydev_property name="org.python.pydev.PYTHON_PROJECT_INTERPRETER">/Users/wedwards/repos2/venv/bin/python</pydev_property>
+<pydev_property name="org.python.pydev.PYTHON_PROJECT_INTERPRETER">Default</pydev_property>
 </pydev_project>

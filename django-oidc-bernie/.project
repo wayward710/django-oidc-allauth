@@ -3,6 +3,7 @@
 	<name>django-oidc-bernie</name>
 	<comment></comment>
 	<projects>
+		<project>django-oidc-provider</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -128,4 +128,23 @@ LOGIN_REDIRECT_URL = '/'
 SITE_URL = 'http://localhost:8000'
 OIDC_RSA_KEY_FOLDER = BASE_DIR
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'oidc_provider': {
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
+        },
+    },
+}
+
 SOCIALACCOUNT_ENABLED = 'allauth.socialaccount' in INSTALLED_APPS
+
+REGISTRATION_ENDPOINT_REQ_TOKEN = False
+REGISTRATION_ENDPOINT_ENABLED = True

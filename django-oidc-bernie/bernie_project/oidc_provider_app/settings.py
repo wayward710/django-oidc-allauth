@@ -1,7 +1,9 @@
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import oidc_provider_app
+import bernie_project
+from bernie_project.oidc_provider_app.extra_scopes.scope_claims import ExtraScopeClaims
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-
 
 SECRET_KEY = 'c14d549c574e4d8cf162404ef0b04598'
 
@@ -29,21 +31,10 @@ INSTALLED_APPS = (
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'allauth.socialaccount.providers.dropbox',
     'allauth.socialaccount.providers.facebook',
-    'allauth.socialaccount.providers.evernote',
     'allauth.socialaccount.providers.google',
-    'allauth.socialaccount.providers.github',
-    'allauth.socialaccount.providers.linkedin',
-    'allauth.socialaccount.providers.openid',
-    'allauth.socialaccount.providers.persona',
-    'allauth.socialaccount.providers.soundcloud',
-    'allauth.socialaccount.providers.stackexchange',
-    'allauth.socialaccount.providers.twitch',
     'allauth.socialaccount.providers.twitter',
-    'allauth.socialaccount.providers.vimeo',
-    'allauth.socialaccount.providers.weibo',
-    'allauth.socialaccount.providers.xing',
+    'bootstrapform'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -144,7 +135,10 @@ LOGGING = {
     },
 }
 
+
 SOCIALACCOUNT_ENABLED = 'allauth.socialaccount' in INSTALLED_APPS
 
 REGISTRATION_ENDPOINT_REQ_TOKEN = False
 REGISTRATION_ENDPOINT_ENABLED = True
+
+OIDC_EXTRA_SCOPE_CLAIMS = 'bernie_project.oidc_provider_app.extra_scopes.scope_claims.ExtraScopeClaims'

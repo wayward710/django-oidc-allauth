@@ -9,3 +9,4 @@ python-openid>=2.2.5
 requests>=2.0.0
 requests-oauthlib>=0.3.0
 django-allauth>=0.13.0
+django-bootstrap-form

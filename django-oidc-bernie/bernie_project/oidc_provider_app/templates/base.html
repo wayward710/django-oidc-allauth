@@ -1,17 +1,19 @@
-{% load i18n %}
-{% load staticfiles %}
-
 <!DOCTYPE html>
 <html>
   <head>
     <title>{% block head_title %}{% endblock %}</title>
     {% block extra_head %}
     {% endblock %}
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-social.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/custom.css">
     
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-theme.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     
+    <script type="text/javascript" src="/static/js/jquery.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+
   </head>
   <body>
     {% block body %}
@@ -27,9 +29,12 @@
     </div>
     {% endif %}
 
-    <div>
-      <strong>Menu:</strong>
-      <ul>
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Menu
+    <span class="caret"></span>
+  </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
 	{% if user.is_authenticated %}
 	<li><a href="{% url 'account_email' %}">Change E-mail</a></li>
 	<li><a href="{% url 'account_logout' %}">Sign Out</a></li>
@@ -37,7 +42,7 @@
 	<li><a href="{% url 'account_login' %}">Sign In</a></li>
 	<li><a href="{% url 'account_signup' %}">Sign Up</a></li>
 	{% endif %}
-      </ul>
+      </ul> 
     </div>
     {% block content %}
     {% endblock %}

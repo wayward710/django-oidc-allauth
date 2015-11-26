@@ -1,9 +1,11 @@
-# Example Project
+# Django OIDC Server with Django Allauth social authentication
 
-Run your own OIDC provider in a second. This is a Django app with all the necessary things to work with `django-oidc-provider` package.
+This uses the Django OIDC server with Django Allauth social authentication.  Information from the 
+social network providers, as well as group membership, is returned by the userinfo endpoint.
 
 ## Setup & Running
 
+Specific directions coming soon
 Setup project environment with [virtualenv](https://virtualenv.pypa.io) and [pip](https://pip.pypa.io).
 
 ```bash
